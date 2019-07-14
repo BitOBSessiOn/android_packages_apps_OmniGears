@@ -48,4 +48,15 @@
             android:persistent="false"
             settings:unitsRight="@string/unit_msec"
             android:dependency="use_bottom_gesture_navigation" />
+
+        <org.omnirom.omnilib.preference.SeekBarPreference
+            android:key="gesture_swipe_start"
+            android:title="@string/gesture_swipe_start_title"
+            android:summary="@string/gesture_swipe_start_summary"
+            android:max="50"
+            settings:min="20"
+            android:persistent="false"
+            settings:unitsRight="@string/unit_px"
+            android:dependency="use_bottom_gesture_navigation" />
+
 </PreferenceScreen>

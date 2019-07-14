@@ -46,9 +46,11 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     private static final String KEY_GESTURE_NAVIGATION = "use_bottom_gesture_navigation";
     private static final String KEY_SWIPE_LENGTH = "gesture_swipe_length";
     private static final String KEY_SWIPE_TIMEOUT = "gesture_swipe_timeout";
+    private static final String KEY_SWIPE_START = "gesture_swipe_start";
 
     private SeekBarPreference mSwipeTriggerLength;
     private SeekBarPreference mSwipeTriggerTimeout;
+    private SeekBarPreference mSwipeTriggerStart;
     private SwitchPreference mGestureNavigation;
 
     @Override
@@ -78,6 +80,14 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         mSwipeTriggerTimeout.setValue(value);
         mSwipeTriggerTimeout.setOnPreferenceChangeListener(this);
 
+        mSwipeTriggerStart = (SeekBarPreference) findPreference(KEY_SWIPE_START);
+        value = Settings.System.getInt(getContentResolver(),
+                Settings.System.OMNI_BOTTOM_GESTURE_SWIPE_START,
+                getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_start));
+        mSwipeTriggerStart.setValue(value);
+        mSwipeTriggerStart.setOnPreferenceChangeListener(this);
+
+
         mGestureNavigation = (SwitchPreference) findPreference(KEY_GESTURE_NAVIGATION);
         mGestureNavigation.setOnPreferenceChangeListener(this);
     }
@@ -99,6 +109,10 @@ public class GestureSettings extends SettingsPreferenceFragment implements
             int value = (Integer) objValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT, value);
+        } else if (preference == mSwipeTriggerStart) {
+            int value = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.OMNI_BOTTOM_GESTURE_SWIPE_START, value);
         } else if (preference == mGestureNavigation) {
             int enabled = (boolean) objValue ? 1 : 0;
             Settings.System.putInt(getContentResolver(),
