@@ -42,18 +42,6 @@
                     android:targetPackage="org.omnirom.omnistyle"
                     android:targetClass="org.omnirom.omnistyle.BrowseThemesActivity" />
         </Preference>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="category_recents"
-        android:title="@string/recents_title">
-
-        <Preference
-            android:key="recents_icon_pack"
-            android:title="@string/recents_icon_pack_title"
-            android:summary="@string/recents_icon_pack_summary" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
