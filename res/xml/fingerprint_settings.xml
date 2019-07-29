@@ -29,7 +29,7 @@
             android:key="category_fingerprint_custom_icon"
             android:title="@string/fingerprint_category_custom_icon">
             <Preference
-                android:title="Select a custom file"
+                android:title="@string/fingerprint_custom_icon_select"
                 android:key="custom_fingerprint_icon" />
         </PreferenceCategory>
 </PreferenceScreen>

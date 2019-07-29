@@ -839,4 +839,5 @@
   <!-- Fingerprint -->
   <string name="fingerprint_settings_title">Отпечаток</string>
   <string name="fingerprint_category_custom_icon">Пользовательский значок</string>
+  <string name="fingerprint_custom_icon_select">Выберите файл</string>
 </resources>

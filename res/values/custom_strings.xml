@@ -865,6 +865,7 @@
     <!-- Fingerprint -->
     <string name="fingerprint_settings_title">Fingerprint</string>
     <string name="fingerprint_category_custom_icon">Custom icon</string>
+    <string name="fingerprint_custom_icon_select">Select a custom file</string>
 
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Swipe to screenshot</string>
